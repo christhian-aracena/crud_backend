@@ -20,4 +20,7 @@
     $apellido = "<p>"."Hola,"." ".$consulta['apellido']."</p>";
 
 
+    $nombreRecortado = substr($consulta['nombre'], 0, 1);
+    $apellidoRecortado = substr($consulta['apellido'], 0, 1);
+
 ?>

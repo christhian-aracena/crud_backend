@@ -18,17 +18,18 @@ try {
 
     if ($resultado['count'] > 0) {
         $_SESSION['email'] = $correo;
-        echo 'success';
+
         // Evitar inyección de SQL utilizando consultas preparadas
         $resultados = $conexion->prepare("SELECT idLogin FROM iniciar_sesion WHERE correo = ?");
         $resultados->bindParam(1, $correo);
         $resultados->execute();
         $consulta = $resultados->fetch(PDO::FETCH_ASSOC);
-
+        echo 'success';
         if ($consulta) {
             $_SESSION['id_user'] = $consulta['idLogin'];
             exit();
         }
+        
     }
 } catch (PDOException $e) {
     // En caso de error en la consulta

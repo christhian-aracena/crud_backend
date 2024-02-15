@@ -140,6 +140,19 @@ img {
 }
 
 .nombre{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     margin-right: 2rem;
+    border-radius: 50rem;
+    background: rgb(0, 132, 255);
+    width: 4rem;
+    height: 4rem;
+    border: solid 0.3rem rgb(191, 202, 34);
 }
 
+.nombre small{
+    color: azure;
+    font-family: Quicksand;
+}

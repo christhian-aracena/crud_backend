@@ -3,8 +3,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['email']) ) {
-        header("Location: login.php");  // Corregí la URL de redirección
-        exit();
+        header("Location: login.php"); 
     }
 ?>
 <head>
@@ -17,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
@@ -31,11 +31,13 @@
 
         <div class="count-user">
             <div class="nombre">
+                <small>
                 <?php
                     include("Negocio/get-nombre.php");
-                    echo $nombre. " " . $apellido;
+                    echo  $nombreRecortado. " " . $apellidoRecortado
                 ?>
-                <a href="Datos/logout.php">Salir</a>
+                </small>
+            <!-- <a href="Datos/logout.php">Salir</a> -->
             </div>
             <div class="perfil">
 
